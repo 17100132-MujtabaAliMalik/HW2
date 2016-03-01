@@ -1,0 +1,15 @@
+-# edit.html.haml using partial
+
+%h1 Delete Existing Movie
+%h2 Enter Title if you wish to delete by title. To delete by rating select your desired rating and leave title field blank.
+
+= form_tag movies_delete2_path(@movie), :method => :post do
+
+  = label :movie, :title, 'Title'
+  = text_field :movie, 'title'
+
+
+  = label :movie, :rating, 'Rating'
+  = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
+  
+  = submit_tag 'Delete'
